@@ -79,7 +79,7 @@
     NSInteger secondsCountDown = [self getDateDifferenceWithNowDateStr:nowStr deadlineStr:deadlineStr];
     
     // 2.使用GCD来实现倒计时 用GCD这个写有一个好处，跳页不会清零 跳页清零会出现倒计时错误的
-    __weak __typeof(self) weakSelf = self;
+    @WeakObj(self);
     
     if (_timer == nil) {
         __block NSInteger timeout = secondsCountDown; // 倒计时时间
@@ -93,7 +93,7 @@
                     dispatch_source_cancel(self->_timer);
                     self->_timer = nil;
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        weakSelf.lab.text = @"当前活动已结束";
+                        selfWeak.lab.text = @"当前活动已结束";
                     });
                 } else { // 倒计时重新计算 时/分/秒
                     NSInteger days = (int)(timeout/(3600*24));
@@ -103,9 +103,9 @@
                     NSString *strTime = [NSString stringWithFormat:@"活动倒计时 %02ld : %02ld : %02ld", hours, minute, second];
                     dispatch_async(dispatch_get_main_queue(), ^{
                         if (days == 0) {
-                            weakSelf.lab.text = strTime;
+                            selfWeak.lab.text = strTime;
                         } else {
-                            weakSelf.lab.text = [NSString stringWithFormat:@"活动倒计时            %ld天 %02ld : %02ld : %02ld", days, hours, minute, second];
+                            selfWeak.lab.text = [NSString stringWithFormat:@"活动倒计时            %ld天 %02ld : %02ld : %02ld", days, hours, minute, second];
                         }
                         
                     });
