@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56C80A44E82D794589D92476 /* libPods-timer_D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F6F979A65DAC4CC392764D9 /* libPods-timer_D.a */; };
 		781F88E320DA2EE500E978EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F88E220DA2EE500E978EE /* AppDelegate.m */; };
 		781F88E620DA2EE500E978EE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F88E520DA2EE500E978EE /* ViewController.m */; };
 		781F88E920DA2EE500E978EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 781F88E720DA2EE500E978EE /* Main.storyboard */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F6F979A65DAC4CC392764D9 /* libPods-timer_D.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-timer_D.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		692F40F527024E231895EE87 /* Pods-timer_D.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-timer_D.debug.xcconfig"; path = "Pods/Target Support Files/Pods-timer_D/Pods-timer_D.debug.xcconfig"; sourceTree = "<group>"; };
 		781F88DE20DA2EE500E978EE /* timer_D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timer_D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		781F88E120DA2EE500E978EE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		781F88E220DA2EE500E978EE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		781F88ED20DA2EE600E978EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		781F88EF20DA2EE600E978EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		781F88F020DA2EE600E978EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D5B846C2551AFFCE78250D6C /* Pods-timer_D.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-timer_D.release.xcconfig"; path = "Pods/Target Support Files/Pods-timer_D/Pods-timer_D.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56C80A44E82D794589D92476 /* libPods-timer_D.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59651DF5CB03B8BCF4CF6B57 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				692F40F527024E231895EE87 /* Pods-timer_D.debug.xcconfig */,
+				D5B846C2551AFFCE78250D6C /* Pods-timer_D.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		781F88D520DA2EE500E978EE = {
 			isa = PBXGroup;
 			children = (
 				781F88E020DA2EE500E978EE /* timer_D */,
 				781F88DF20DA2EE500E978EE /* Products */,
+				59651DF5CB03B8BCF4CF6B57 /* Pods */,
+				AA7B58C2EE5E0F63EA6D8ECC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +87,14 @@
 			path = timer_D;
 			sourceTree = "<group>";
 		};
+		AA7B58C2EE5E0F63EA6D8ECC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F6F979A65DAC4CC392764D9 /* libPods-timer_D.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 781F88F420DA2EE600E978EE /* Build configuration list for PBXNativeTarget "timer_D" */;
 			buildPhases = (
+				320F656AC15AF18BC6402D7C /* [CP] Check Pods Manifest.lock */,
 				781F88DA20DA2EE500E978EE /* Sources */,
 				781F88DB20DA2EE500E978EE /* Frameworks */,
 				781F88DC20DA2EE500E978EE /* Resources */,
+				E595271EDC5E2B11741FB1FA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,6 +161,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		320F656AC15AF18BC6402D7C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-timer_D-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E595271EDC5E2B11741FB1FA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-timer_D/Pods-timer_D-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-timer_D/Pods-timer_D-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		781F88DA20DA2EE500E978EE /* Sources */ = {
@@ -281,9 +346,11 @@
 		};
 		781F88F520DA2EE600E978EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 692F40F527024E231895EE87 /* Pods-timer_D.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7T5NXR7M3P;
 				INFOPLIST_FILE = timer_D/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -297,9 +364,11 @@
 		};
 		781F88F620DA2EE600E978EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5B846C2551AFFCE78250D6C /* Pods-timer_D.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7T5NXR7M3P;
 				INFOPLIST_FILE = timer_D/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
