@@ -32,8 +32,10 @@
     }];
     self.lab = [[UILabel alloc] initWithFrame:CGRectMake(50, 100, ScreenW-100, 50)];
     self.lab.backgroundColor = UIColor.purpleColor;
+    self.lab.textAlignment = NSTextAlignmentCenter;
     self.lab.font = [UIFont systemFontOfSize:12];
     self.lab.textColor = UIColor.whiteColor;
+    self.lab.text = @"下拉加载倒计时";
     [self.view addSubview:self.lab];
     
     // Do any additional setup after loading the view, typically from a nib.
@@ -65,15 +67,12 @@
     cell.textLabel.text = [NSString stringWithFormat:@"第%ld行",(long)indexPath.row];
     return cell;
 }
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-     [self activeCountDownAction];
-}
+
 - (void)activeCountDownAction {
      [self.tableView.mj_header endRefreshing];
     // 1.计算截止时间与当前时间差值
     // 倒计时的时间 测试数据
-    NSString *deadlineStr = @"2018-06-20 15:50:00";
+    NSString *deadlineStr = @"2018-08-20 15:50:00";
     // 当前时间的时间戳
     NSString *nowStr = [self getCurrentTimeyyyymmdd];
     // 计算时间差值
@@ -106,7 +105,7 @@
                         if (days == 0) {
                             weakSelf.lab.text = strTime;
                         } else {
-                            weakSelf.lab.text = [NSString stringWithFormat:@"使用GCD来实现活动倒计时            %ld天 %02ld : %02ld : %02ld", days, hours, minute, second];
+                            weakSelf.lab.text = [NSString stringWithFormat:@"活动倒计时            %ld天 %02ld : %02ld : %02ld", days, hours, minute, second];
                         }
                         
                     });
